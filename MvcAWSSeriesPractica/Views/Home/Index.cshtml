@@ -1,0 +1,29 @@
+﻿@model List<Serie>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@if(Model != null ){
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Genre</th>
+                <th>Release Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (Serie serie in Model)
+            {
+                <tr>
+                    <td>@serie.IdSerie</td>
+                    <td>@serie.Nombre</td>
+                    <td><img src="@serie.Imagen" width="350"/></td>
+                    <td>@serie.Anyo</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
